@@ -267,3 +267,112 @@ footer a:hover {
     font-size: 1.2rem;
   }
 }
+
+/* Existing styles remain unchanged above... */
+
+/* Media Queries - Responsive Enhancements */
+@media (max-width: 992px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .slide-content {
+    max-width: 90%;
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .features .card,
+  .collections .card,
+  .option-card {
+    padding: 20px;
+  }
+
+  .customizer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .features .icon {
+    font-size: 2rem;
+  }
+
+  .total-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .slide-content {
+    left: 5%;
+    right: 5%;
+    padding: 15px;
+  }
+
+  .slider-btn {
+    display: none; /* hide arrows on small devices */
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .option-section h3 {
+    font-size: 1rem;
+  }
+
+  .collections .card img {
+    height: 180px;
+  }
+
+  .shoe-preview img {
+    height: 250px;
+  }
+}
