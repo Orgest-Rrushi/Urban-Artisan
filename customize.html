@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Customize Your Shoes - Urban Artisan</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <!-- Header -->
@@ -26,95 +26,130 @@
     <section class="customizer">
         <div class="container">
             <h1 class="page-title">Design Your Perfect Shoes</h1>
-            
+
             <div class="customizer-container">
                 <!-- 3D Viewer (Simplified with Image) -->
                 <div class="shoe-preview">
-                    <img id="shoe-image" src="https://placehold.co/600x400/e9d8c2/333333?text=Shoe+Preview" alt="Shoe Preview">
+                    <img
+                        id="shoe-image"
+                        src="https://images.unsplash.com/photo-1528701800489-9b35d9a21f7f?auto=format&fit=crop&w=600&q=80"
+                        alt="Shoe Preview"
+                    />
                     <p class="preview-note">* In a real application, this would be a 3D model</p>
                 </div>
-                
+
                 <!-- Customization Options -->
                 <div class="customization-options">
                     <div class="option-card">
                         <h2>Customize Your Shoe</h2>
-                        
+
                         <!-- Model Selection -->
                         <div class="option-section">
                             <h3>Choose Your Style</h3>
                             <div class="radio-group">
                                 <label>
-                                    <input type="radio" name="model" value="oxford" checked>
+                                    <input type="radio" name="model" value="oxford" checked />
                                     <span>Classic Oxford</span>
                                     <span class="price">$199</span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="model" value="loafer">
+                                    <input type="radio" name="model" value="loafer" />
                                     <span>Modern Loafer</span>
                                     <span class="price">$179</span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="model" value="sneaker">
+                                    <input type="radio" name="model" value="sneaker" />
                                     <span>Casual Sneaker</span>
                                     <span class="price">$149</span>
                                 </label>
                             </div>
                         </div>
-                        
+
                         <!-- Color Selection -->
                         <div class="option-section">
                             <h3>Choose Your Color</h3>
                             <div class="color-options">
-                                <button class="color-btn active" style="background-color: #000000;" data-color="Black"></button>
-                                <button class="color-btn" style="background-color: #5D4037;" data-color="Brown"></button>
-                                <button class="color-btn" style="background-color: #D7CCC8;" data-color="Tan"></button>
-                                <button class="color-btn" style="background-color: #1A237E;" data-color="Navy"></button>
-                                <button class="color-btn" style="background-color: #880E4F;" data-color="Burgundy"></button>
-                                <button class="color-btn" style="background-color: #4CAF50;" data-color="Olive"></button>
+                                <button
+                                    class="color-btn active"
+                                    style="background-color: #000000"
+                                    data-color="Black"
+                                ></button>
+                                <button
+                                    class="color-btn"
+                                    style="background-color: #5D4037"
+                                    data-color="Brown"
+                                ></button>
+                                <button
+                                    class="color-btn"
+                                    style="background-color: #D7CCC8"
+                                    data-color="Tan"
+                                ></button>
+                                <button
+                                    class="color-btn"
+                                    style="background-color: #1A237E"
+                                    data-color="Navy"
+                                ></button>
+                                <button
+                                    class="color-btn"
+                                    style="background-color: #880E4F"
+                                    data-color="Burgundy"
+                                ></button>
+                                <button
+                                    class="color-btn"
+                                    style="background-color: #4CAF50"
+                                    data-color="Olive"
+                                ></button>
                             </div>
                             <p id="selected-color">Selected: Black</p>
                         </div>
-                        
+
                         <!-- Material Selection -->
                         <div class="option-section">
                             <h3>Choose Your Material</h3>
                             <div class="radio-group">
                                 <label>
-                                    <input type="radio" name="material" value="leather" checked>
+                                    <input type="radio" name="material" value="leather" checked />
                                     <span>Premium Leather</span>
                                     <span class="price">Included</span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="material" value="suede">
+                                    <input type="radio" name="material" value="suede" />
                                     <span>Suede</span>
                                     <span class="price">+$20</span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="material" value="canvas">
+                                    <input type="radio" name="material" value="canvas" />
                                     <span>Canvas</span>
                                     <span class="price">-$30</span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="material" value="vegan">
+                                    <input type="radio" name="material" value="vegan" />
                                     <span>Vegan Leather</span>
                                     <span class="price">+$10</span>
                                 </label>
                             </div>
                         </div>
-                        
+
                         <!-- Custom Details -->
                         <div class="option-section">
                             <h3>Custom Details</h3>
                             <p class="detail-note">Adjust for more detailed customizations (+$5 per level)</p>
                             <div class="slider-container">
-                                <input type="range" min="0" max="10" value="0" class="slider" id="detail-slider">
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="10"
+                                    value="0"
+                                    class="slider"
+                                    id="detail-slider"
+                                />
                                 <div class="slider-labels">
                                     <span>Basic</span>
                                     <span id="detail-value">+$0</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Price and Add to Cart -->
                         <div class="price-section">
                             <div class="total-price">

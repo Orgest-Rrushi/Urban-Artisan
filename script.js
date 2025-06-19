@@ -3,22 +3,17 @@ document.querySelectorAll('#year').forEach(el => {
     el.textContent = new Date().getFullYear();
 });
 
-// Image Slider
+// Image Slider (for other parts of the site, if any)
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 let currentSlide = 0;
 
-// Initialize slider
 function initSlider() {
-    if (slides.length === 0) return; // No slides found
-    
-    // Set up automatic sliding
+    if (slides.length === 0) return;
     setInterval(() => {
         nextSlide();
     }, 5000);
-    
-    // Add click events to buttons
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 }
@@ -66,6 +61,34 @@ function initCustomizer() {
         vegan: 10
     };
     
+    // Image URLs based on model and color (sample URLs from Unsplash or placeholder)
+    const shoeImages = {
+        oxford: {
+            Black: "https://images.unsplash.com/photo-1528701800489-9b35d9a21f7f?auto=format&fit=crop&w=600&q=80",
+            Brown: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80",
+            Tan: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80", // reuse brown for tan
+            Navy: "https://images.unsplash.com/photo-1528701800489-9b35d9a21f7f?auto=format&fit=crop&w=600&q=80", // fallback to black
+            Burgundy: "https://images.unsplash.com/photo-1528701800489-9b35d9a21f7f?auto=format&fit=crop&w=600&q=80",
+            Olive: "https://images.unsplash.com/photo-1528701800489-9b35d9a21f7f?auto=format&fit=crop&w=600&q=80"
+        },
+        loafer: {
+            Black: "https://images.unsplash.com/photo-1535968881631-66c7ebc32c8a?auto=format&fit=crop&w=600&q=80",
+            Brown: "https://images.unsplash.com/photo-1562157874-97ac36cd04fe?auto=format&fit=crop&w=600&q=80",
+            Tan: "https://images.unsplash.com/photo-1562157874-97ac36cd04fe?auto=format&fit=crop&w=600&q=80",
+            Navy: "https://images.unsplash.com/photo-1562157874-97ac36cd04fe?auto=format&fit=crop&w=600&q=80",
+            Burgundy: "https://images.unsplash.com/photo-1535968881631-66c7ebc32c8a?auto=format&fit=crop&w=600&q=80",
+            Olive: "https://images.unsplash.com/photo-1535968881631-66c7ebc32c8a?auto=format&fit=crop&w=600&q=80"
+        },
+        sneaker: {
+            Black: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+            Brown: "https://images.unsplash.com/photo-1552346151-f54c8e0abed7?auto=format&fit=crop&w=600&q=80",
+            Tan: "https://images.unsplash.com/photo-1552346151-f54c8e0abed7?auto=format&fit=crop&w=600&q=80",
+            Navy: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+            Burgundy: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+            Olive: "https://images.unsplash.com/photo-1552346151-f54c8e0abed7?auto=format&fit=crop&w=600&q=80"
+        }
+    };
+    
     // Update total price
     function updatePrice() {
         let basePrice = 199; // Default
@@ -101,7 +124,6 @@ function initCustomizer() {
     function updateShoeImage() {
         let model = 'oxford';
         let color = 'Black';
-        let material = 'leather';
         
         // Get selected model
         modelRadios.forEach(radio => {
@@ -115,14 +137,11 @@ function initCustomizer() {
             }
         });
         
-        // Get selected material
-        materialRadios.forEach(radio => {
-            if (radio.checked) material = radio.value;
-        });
+        // Lookup image url, fallback if needed
+        let imgUrl = (shoeImages[model] && shoeImages[model][color]) || 
+            "https://placehold.co/600x400/e9d8c2/333333?text=No+Image";
         
-        // In a real app, you would change to a different image based on selections
-        // For this demo, we'll just update the placeholder text
-        shoeImage.src = `https://placehold.co/600x400/e9d8c2/333333?text=${model}+in+${color}+${material}`;
+        shoeImage.src = imgUrl;
     }
     
     // Set up event listeners
@@ -136,7 +155,7 @@ function initCustomizer() {
     materialRadios.forEach(radio => {
         radio.addEventListener('change', () => {
             updatePrice();
-            updateShoeImage();
+            // Material doesn't change image currently
         });
     });
     
@@ -164,8 +183,9 @@ function initCustomizer() {
         });
     }
     
-    // Initialize price
+    // Initialize price and image on page load
     updatePrice();
+    updateShoeImage();
 }
 
 // Initialize everything when the page loads
