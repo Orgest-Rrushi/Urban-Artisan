@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Urban Artisan - Handcrafted Shoes</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Header -->
@@ -22,11 +22,11 @@
     </div>
   </header>
 
-  <!-- Hero Section with Image Slider -->
+  <!-- Hero Slider -->
   <section class="hero">
     <div class="slider">
       <div class="slide active">
-        <img src="https://images.unsplash.com/photo-1612423284934-c8018cc6ccf6" alt="Handcrafted Shoes">
+        <img src="https://images.squarespace-cdn.com/content/v1/5d8393ede57474059d683f08/1568905927495-SG9SEEWCF0XMY39Q7YQX/handmade+custom+shoes+workshop+Sheffield+Crookes.jpg" alt="Handcrafted Shoes" />
         <div class="slide-content">
           <h2>Urban Artisan</h2>
           <p>Handcrafted shoes made with passion and precision</p>
@@ -34,14 +34,14 @@
         </div>
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1593032457865-b7d2a99ec9df" alt="Premium Materials">
+        <img src="https://placehold.co/1200x600/d8c2a0/333333?text=Premium+Materials" alt="Premium Materials" />
         <div class="slide-content">
           <h2>Premium Materials</h2>
           <p>Only the finest leathers and materials</p>
         </div>
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1600180758890-dedb85f90fc7" alt="Master Craftsmanship">
+        <img src="https://placehold.co/1200x600/c2a080/333333?text=Master+Craftsmanship" alt="Master Craftsmanship" />
         <div class="slide-content">
           <h2>Master Craftsmanship</h2>
           <p>Every stitch tells a story of dedication</p>
@@ -52,7 +52,7 @@
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section class="features">
     <div class="container">
       <h2 class="section-title">Why Choose Urban Artisan?</h2>
@@ -70,29 +70,29 @@
         <div class="card">
           <div class="icon">🌿</div>
           <h3>Sustainable Materials</h3>
-          <p>We're committed to using eco-friendly materials and processes.</p>
+          <p>We're committed to using eco‑friendly materials and processes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Collection Preview -->
+  <!-- Collections Preview -->
   <section class="collections">
     <div class="container">
       <h2 class="section-title">Our Collections</h2>
       <div class="collection-cards">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1620732599834-4b6369f2a6a5" alt="Classic Oxfords">
+          <img src="https://placehold.co/400x300/e9d8c2/333333?text=Classic+Oxfords" alt="Classic Oxfords" />
           <h3>Classic Oxfords</h3>
           <p>Starting at $199</p>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1596464716127-df861c8e2fd8" alt="Modern Loafers">
+          <img src="https://placehold.co/400x300/d8c2a0/333333?text=Modern+Loafers" alt="Modern Loafers" />
           <h3>Modern Loafers</h3>
           <p>Starting at $179</p>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1582560471344-d4b81df2cc3c" alt="Casual Sneakers">
+          <img src="https://placehold.co/400x300/c2a080/333333?text=Casual+Sneakers" alt="Casual Sneakers" />
           <h3>Casual Sneakers</h3>
           <p>Starting at $149</p>
         </div>
@@ -126,7 +126,7 @@
             123 Artisan Street<br />
             Craftsville, CA 90210<br />
             info@urbanartisan.com<br />
-            (555) 123-4567
+            (555) 123‑4567
           </p>
         </div>
       </div>
@@ -136,30 +136,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const slides = document.querySelectorAll(".slide");
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
-    let current = 0;
-
-    function updateSlides() {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === current) slide.classList.add("active");
-      });
-    }
-
-    nextBtn.addEventListener("click", () => {
-      current = (current + 1) % slides.length;
-      updateSlides();
-    });
-
-    prevBtn.addEventListener("click", () => {
-      current = (current - 1 + slides.length) % slides.length;
-      updateSlides();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
